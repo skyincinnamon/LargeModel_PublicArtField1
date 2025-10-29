@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品详情 - 公共艺术设计</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --beige: #f5f0e8;
+            --white: #ffffff;
+            --gray: #888888;
+            --black: #222222;
+            --light-brown: #d2c5a8;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 14px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--beige);
+            color: var(--black);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .artwork-detail-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .artwork-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+        }
+
+        .artwork-header h1 {
+            color: var(--black);
+            font-weight: 500;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .back-button {
+            background: none;
+            border: 1px solid var(--light-brown);
+            padding: 8px 16px;
+            border-radius: var(--radius);
+            color: var(--black);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .back-button:hover {
+            background: var(--light-brown);
+            color: var(--white);
+        }
+
+        .artwork-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .category-column {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .artwork-item {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .artwork-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);;
+        }
+
+        .artwork-text {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .artwork-text h3 {
+            margin: 0 0 1rem 0;
+            color: var(--black);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .artwork-text p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0 0 1rem 0;
+        }
+
+        .artwork-details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light-brown);
+        }
+
+        .detail-item {
+            margin-bottom: 0.8rem;
+        }
+
+        .detail-label {
+            color: var(--black);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .detail-value {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .artwork-section {
+            margin-top: 1.5rem;
+        }
+
+        .artwork-section h4 {
+            color: var(--black);
+            margin: 0 0 0.8rem 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .artwork-section p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0 0 0.8rem 0;
+        }
+
+        .artwork-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 1200px) {
+            .artwork-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .artwork-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="artwork-detail-container">
+        <div class="artwork-header">
+            <h1>作品详情</h1>
+            <button class="back-button" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i>
+                返回
+            </button>
+        </div>
+
+        <div class="artwork-content">
+            <!-- 左侧列：墙面艺术 - 英国馆 -->
+            <div class="category-column">
+                <div class="artwork-item">
+                    <div class="artwork-text">
+                        <h3>建筑艺术《英国馆》</h3>
+                        <p>英国馆以 "种子圣殿" 为核心设计理念，整体外形独特，宛如一个没有屋顶的开放式公园，外墙分布着 6 万只有机玻璃材质的 "触须"，内部储存着 25 万颗植物种子，向人们展示了英国在植物研究方面的成就以及对自然的关注。</p>
+                        <div class="artwork-image-container">
+                            <img src="src/xian.png" alt="英国馆" class="artwork-image">
+                        </div>
+                        <div class="artwork-details">
+                            <div class="detail-item">
+                                <div class="detail-label">艺术家</div>
+                                <div class="detail-value">托马斯・赫斯维克，英国著名建筑设计师。</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">创作年份</div>
+                                <div class="detail-value">2010</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">位置</div>
+                                <div class="detail-value">中国上海世博园区</div>
+                            </div>
+                             <div class="detail-item">
+                                <div class="detail-label">尺寸</div>
+                                <div class="detail-value">英国馆高约 18 米，"种子圣殿" 由 6 万根亚克力杆组成，每根杆长 7.5 米。</div>
+                            </div>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>材质</h4>
+                            <p>主要材质为亚克力，6 万根透明亚克力杆连通内外，其末端存放着种子。此外，展馆结构还采用了一些钢材等建筑材料。</p>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>展示场景</h4>
+                            <p>位于上海世博园区内，周围是各国的展馆。英国馆的 "种子圣殿" 外部的触须在白天能像光纤一样传导光线，提供内部照明，晚上每个杆内的光源可使整个结构发光，吸引了众多游客前来参观。</p>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>价值</h4>
+                            <p>在艺术价值方面，独特的 "种子圣殿" 设计极具创意和视觉冲击力，展现了当代建筑对传统造型的创新。在文化价值上，它重点展示了英国城市公园和花园的开创性历史及植物研究的传承，促进了不同文化间的交流。在社会价值层面，作为世博会的重要展馆之一，在世博会期间接待了 700 多万人，成为了人们关注的焦点，也为后世的建筑设计提供了创新的思路和范例，还获得了世博会展馆设计金奖。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 中间列：建筑艺术 - 时间的灯塔 -->
+            <div class="category-column">
+                 <div class="artwork-item">
+                    <div class="artwork-text">
+                        <h3>建筑艺术《时间的灯塔》</h3>
+                        <p>《时间的灯塔》是一个融合了建筑与艺术的装置作品，通过独特的设计将历史与未来并置，营造出超现实的场景。</p>
+                        <div class="artwork-image-container">
+                            <img src="src/cai.png" alt="时间的灯塔" class="artwork-image">
+                        </div>
+                        <div class="artwork-details">
+                            <div class="detail-item">
+                                <div class="detail-label">艺术家</div>
+                                <div class="detail-value">马岩松，MAD 建筑事务所创始人，首位在海外赢得重要标志性建筑的中国建筑师。</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">创作年份</div>
+                                <div class="detail-value">2022</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">位置</div>
+                                <div class="detail-value">广东南海西樵太平墟，装置位于太平墟面朝西江的旧市场楼处。</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">尺寸</div>
+                                <div class="detail-value">公开资料中未明确提及具体尺寸信息，从描述推测是一个与旧市场楼结合的较大型装置，楼高为三层。</div>
+                            </div>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>材质</h4>
+                            <p>三层建筑结构被反射材料所包裹，高耸的多媒体灯柱披上七彩织物膜制成的轻衣。</p>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>展示场景</h4>
+                            <p>在 "艺术在樵山 ——2022 广东南海大地艺术节" 太平墟艺术区域展出，周边有安静的村庄、江畔高速发展的景象、西江以及对岸的平沙岛。</p>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>价值</h4>
+                            <p>文化层面上，作品所在的太平墟有着深厚历史，装置重塑了昔日水上灯塔，唤起当地人的共同记忆；艺术层面上，通过超现实的材料质感与现存建筑的反差，引发人们对陌生未来的想象，将历史与未来并置，为观众带来独特的视觉与情感体验；社会层面上，作为大地艺术节的一部分，它为当地增添了文化艺术氛围，促进了地区的文化交流与发展。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧列：建筑艺术 - 韵律的光 -->
+            <div class="category-column">
+                 <div class="artwork-item">
+                    <div class="artwork-text">
+                        <h3>建筑艺术《韵律的光》</h3>
+                        <p>《韵律的光》是苏州规划展览馆建筑设计中的一个特色元素，通过独特的设计手法，将建筑表皮与光线相结合，营造出富有韵律和动感的视觉效果，为展览馆增添了独特的艺术氛围。</p>
+                        <div class="artwork-image-container">
+                            <img src="src/guang.png" alt="韵律的光" class="artwork-image">
+                        </div>
+                        <div class="artwork-details">
+                            <div class="detail-item">
+                                <div class="detail-label">艺术家</div>
+                                <div class="detail-value">日清设计（Lacime Architects）团队。</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">创作年份</div>
+                                <div class="detail-value">2017 年</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">位置</div>
+                                <div class="detail-value">中国苏州，位于苏州规划展览馆，具体地址是苏州相城区高铁新城南天成路 58 号。</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">尺寸</div>
+                                <div class="detail-value">公开资料中未明确提及具体尺寸信息。</div>
+                            </div>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>材质</h4>
+                            <p>建筑外立面可能采用了多种材质来实现《韵律的光》这一效果，如玻璃、金属板材等。玻璃材质能够透过和反射光线，形成丰富的光影变化；金属板材则可以通过其表面的处理和造型，增强光线的反射和折射，营造出动态的韵律感。</p>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>展示场景</h4>
+                            <p>《韵律的光》作为苏州规划展览馆建筑的一部分，展示场景是整个展览馆的建筑环境。展览馆内部展示了苏州的城市规划模型、历史文化图片、多媒体展示等内容，而《韵律的光》通过建筑表皮的光影变化，为整个展览空间增添了独特的氛围和视觉体验。观众在参观展览馆的过程中，不仅可以欣赏到内部的展览内容，还能感受到建筑外部光线与建筑表皮互动所产生的艺术魅力。</p>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>价值</h4>
+                            <p>《韵律的光》具有多方面的价值。在艺术价值方面，它通过独特的光影设计，将建筑与艺术完美结合，为苏州的城市景观增添了一处独特的艺术作品，提升了城市的文化氛围和艺术品位。在建筑设计价值方面，这种创新的表皮设计手法为建筑设计提供了新的思路和方法，展示了如何通过对光线和材质的巧妙运用，创造出富有韵律和动感的建筑外观。在文化价值方面，它作为苏州规划展览馆的一部分，承载着展示苏州城市文化和规划发展的重要使命，通过建筑的形式向观众传达了苏州的历史、文化和未来发展的理念。同时，它也为市民和游客提供了一个欣赏和体验建筑艺术的场所，促进了公众对建筑文化的了解和认知。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
+
+

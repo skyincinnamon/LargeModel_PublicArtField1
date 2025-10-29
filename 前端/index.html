@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公共艺术设计</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 左侧可折叠历史对话侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>对话历史</h3>
+                <button id="toggleSidebar" class="toggle-btn"><i class="fas fa-chevron-left"></i></button>
+            </div>
+            <div class="history-container" id="historyContainer">
+                <!-- 历史记录将在这里动态生成 -->
+            </div>
+        </aside>
+
+        <!-- 主要内容区域 - 两大部分 -->
+        <main class="main-content">
+            <!-- 1. 问答互动区 -->
+            <section class="qa-section">
+                <div class="qa-header">
+                    <h2>公共艺术设计交流</h2>
+                </div>
+                <div class="chat-container">
+                    <div class="chat-box" id="chatBox">
+                        <div class="welcome-message">
+                            <p>欢迎来到公共艺术设计交流平台。请提出您关于公共艺术设计的问题...</p>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" id="messageInput" placeholder="输入您关于公共艺术设计的问题...">
+                        <button id="sendBtn" class="action-btn"><i class="fas fa-paper-plane"></i></button>
+                        <button id="newChatBtn" class="action-btn"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 艺术展示区 -->
+            <section class="exhibition-section">
+                <div class="exhibition-header">
+                    <h2>艺术展览</h2>
+                </div>
+                <!-- 艺术作品网格 -->
+                <div class="artwork-grid">
+                    <div class="artwork-item" onclick="window.location.href='artwork-detail.html'">
+                        <img src="src/1.JPG" alt="城市雕塑">
+                        <div class="artwork-info">
+                            <h4>城市雕塑</h4>
+                            <p>现代公共空间艺术装置</p>
+                        </div>
+                    </div>
+                    <div class="artwork-item" onclick="window.location.href='artwork-detail2.html'">
+                        <img src="src/2.JPG" alt="墙面艺术">
+                        <div class="artwork-info">
+                            <h4>建筑艺术</h4>
+                            <p>融合功能与美学的公共空间</p>
+                        </div>
+                    </div>
+                    <div class="artwork-item" onclick="window.location.href='artwork-detail3.html'">
+                        <img src="src/3.JPG" alt="互动装置">
+                        <div class="artwork-info">
+                            <h4>互动装置</h4>
+                            <p>公共参与型艺术设计</p>
+                        </div>
+                    </div>
+                    <div class="artwork-item" onclick="window.location.href='artwork-detail4.html'">
+                        <img src="src/4.JPG" alt="建筑艺术">
+                        <div class="artwork-info">
+                            <h4>墙面艺术</h4>
+                            <p>城市空间视觉艺术表达</p>
+                        </div>
+                    </div>
+                    <div class="artwork-item" onclick="window.location.href='artwork-detail5.html'">
+                        <img src="src/5.PNG" alt="公共设施">
+                        <div class="artwork-info">
+                            <h4>公共设施</h4>
+                            <p>融入艺术的日常公共服务装置</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="keyword-bubbles" id="keywordBubbles">
+                    <!-- 关键词气泡将由JS动态生成 -->
+                </div>
+
+
+
+                <!-- 留言板 -->
+                <div class="message-board">
+                    <h3>留言板</h3>
+                    <div class="message-list" id="messageList">
+                        <!-- 留言将在这里显示 -->
+                    </div>
+                    <div class="message-input">
+                        <textarea id="boardMessage" placeholder="分享您对艺术作品的感想..."></textarea>
+                        <!-- <button id="postMessage" class="action-btn">发布</button> -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

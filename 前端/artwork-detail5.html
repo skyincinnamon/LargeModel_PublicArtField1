@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品详情 - 公共艺术设计</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --beige: #f5f0e8;
+            --white: #ffffff;
+            --gray: #888888;
+            --black: #222222;
+            --light-brown: #d2c5a8;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 14px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--beige);
+            color: var(--black);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .artwork-detail-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .artwork-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+        }
+
+        .artwork-header h1 {
+            color: var(--black);
+            font-weight: 500;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .back-button {
+            background: none;
+            border: 1px solid var(--light-brown);
+            padding: 8px 16px;
+            border-radius: var(--radius);
+            color: var(--black);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .back-button:hover {
+            background: var(--light-brown);
+            color: var(--white);
+        }
+
+        .artwork-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .category-column {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .artwork-item {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .artwork-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .artwork-text {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .artwork-text h3 {
+            margin: 0 0 1rem 0;
+            color: var(--black);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .artwork-text p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0 0 1rem 0;
+        }
+
+        .artwork-details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light-brown);
+        }
+
+        .detail-item {
+            margin-bottom: 0.8rem;
+        }
+
+        .detail-label {
+            color: var(--black);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .detail-value {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .artwork-section {
+            margin-top: 1.5rem;
+        }
+
+        .artwork-section h4 {
+            color: var(--black);
+            margin: 0 0 0.8rem 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .artwork-section p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0 0 0.8rem 0;
+        }
+
+        .artwork-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 1200px) {
+            .artwork-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .artwork-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="artwork-detail-container">
+        <div class="artwork-header">
+            <h1>作品详情</h1>
+            <button class="back-button" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i>
+                返回
+            </button>
+        </div>
+
+        <div class="artwork-content">
+            <!-- 左侧列：公共设施 - 岐江公园 -->
+            <div class="category-column">
+                <div class="artwork-item">
+                    <div class="artwork-text">
+                        <h3>公共设施《岐江公园》</h3>
+                        <p>俞孔坚的《岐江公园》是 11 公顷的工业遗址改造项目，将粤中造船厂旧址改造成公园，融合工业遗产与自然景观。</p>
+                        <p>粤中造船厂从 1953 年至 1999 年，历经兴衰，其近半世纪历程是城市记忆重要部分，也折射中国特定阶段经历。</p>
+                        <div class="artwork-image-container">
+                            <img src="src/qijiang.png" alt="岐江公园" class="artwork-image">
+                        </div>
+                        <div class="artwork-details">
+                            <div class="detail-item">
+                                <div class="detail-label">艺术家</div>
+                                <div class="detail-value">俞孔坚</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">创作年份</div>
+                                <div class="detail-value">2001</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">位置</div>
+                                <div class="detail-value">粤中造船厂旧址</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">尺寸</div>
+                                <div class="detail-value">11公顷</div>
+                            </div>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>设计核心</h4>
+                            <p>设计关键在于把握改造利用强度与方式，通过保留、修饰原有形式及创造新形式，让旧址兼具历史记忆与时代价值。</p>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>意义</h4>
+                            <p>保留历史的印迹，作为城市的记忆，唤起造访者的共鸣，同时又具有新时代的功能和审美价值。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 中间列：Placeholder -->
+            <div class="category-column">
+                <div class="artwork-item">
+                    <div class="artwork-text">
+                        <h3>公共设施《润溪山・创新公园》</h3>
+                        <p>沈阳《润溪山・创新公园》凭借巨型拟树状雕塑、彩虹墙等特色景观，打造城市艺术空间；借 4 米高差构建台地广场、下沉广场与景观桥，塑造立体空间；以儿童活动区丰富互动设施，营造儿童友好空间，全方位满足市民休闲、社交、游玩需求。</p>
+                        <div class="artwork-image-container">
+                            <img src="src/run.png" alt="润溪山・创新公园" class="artwork-image">
+                        </div>
+                        <div class="artwork-details">
+                            <div class="detail-item">
+                                <div class="detail-label">艺术家</div>
+                                <div class="detail-value">里表都会（北京）规划设计咨询</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">创作年份</div>
+                                <div class="detail-value">2021</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">位置</div>
+                                <div class="detail-value">辽宁省沈阳市</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">尺寸</div>
+                                <div class="detail-value">30000㎡</div>
+                            </div>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>艺术思路</h4>
+                            <p>"城市礼盒"的游乐空间设计概念，以丰富、创新的空间结构和设计亮点，容纳每一个大小朋友的玩心；并运用场景化的设计手法，引出主题IP"城市礼盒"，从惊喜"礼盒"的发现延伸到礼盒空间探索之旅，设计帮助孩子打造智慧成长与极具梦幻的主题沉浸式互动游乐空间。</p>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>场景价值</h4>
+                            <p>城市公园不仅停留于美学价值的创造，更注重新生活场景的塑造。设计师希望从景观维度出发，以开放的姿态为市民们共同创造一处未来社区共享的城市公园，开启现代都市公园的生活方式。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧列：公共设施 - Peel Sculpture -->
+            <div class="category-column">
+                 <div class="artwork-item">
+                    <div class="artwork-text">
+                        <h3>公共设施《皮尔广场（Peel Plaza）》</h3>
+                        <p>《皮尔广场（Peel Plaza）》是一件兼具雕塑属性与实用功能的城市公共空间艺术作品。它以独特的木质平台设计，呈现出部分 "剥落" 卷曲的形态，与周边环境巧妙融合。</p>
+                        <div class="artwork-image-container">
+                            <img src="src/peel.png" alt="皮尔广场（Peel Plaza）" class="artwork-image">
+                        </div>
+                        <div class="artwork-details">
+                            <div class="detail-item">
+                                <div class="detail-label">艺术家</div>
+                                <div class="detail-value">Gabriel Lester</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">创作年份</div>
+                                <div class="detail-value">2022</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">位置</div>
+                                <div class="detail-value">荷兰阿姆斯特丹的 Weesperplein 区域</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">尺寸</div>
+                                <div class="detail-value">该广场沿街道延展，规模足以容纳诸多设施与往来人群。</div>
+                            </div>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>设计细节与材料</h4>
+                            <p>材质：主要材质为木材，用于打造呈现 "剥落" 状态的平台部分，此外还融合了场地上原有的树木。</p>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>展示场景</h4>
+                            <p>处于城市街道旁，周围环绕着街道和运河，是阿姆斯特丹重要交通枢纽与繁忙旅游景点附近的公共空间，与周边商店、咖啡馆和餐馆等共同构成城市生活场景。</p>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>价值</h4>
+                            <p>它将雕塑艺术与城市露台功能完美结合，通过独特造型吸引公众互动，为市民和游客提供了休闲、交流的惬意场所，成为激活城市公共空间、提升城市活力与文化氛围的典范之作，兼具艺术审美价值与实用价值。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
+

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品详情 - 公共艺术设计</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --beige: #f5f0e8;
+            --white: #ffffff;
+            --gray: #888888;
+            --black: #222222;
+            --light-brown: #d2c5a8;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 14px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--beige);
+            color: var(--black);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .artwork-detail-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .artwork-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+        }
+
+        .artwork-header h1 {
+            color: var(--black);
+            font-weight: 500;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .back-button {
+            background: none;
+            border: 1px solid var(--light-brown);
+            padding: 8px 16px;
+            border-radius: var(--radius);
+            color: var(--black);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .back-button:hover {
+            background: var(--light-brown);
+            color: var(--white);
+        }
+
+        .artwork-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .category-column {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .artwork-item {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .artwork-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);;
+        }
+
+        .artwork-text {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .artwork-text h3 {
+            margin: 0 0 1rem 0;
+            color: var(--black);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .artwork-text p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0 0 1rem 0;
+        }
+
+        .artwork-details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light-brown);
+        }
+
+        .detail-item {
+            margin-bottom: 0.8rem;
+        }
+
+        .detail-label {
+            color: var(--black);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .detail-value {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .artwork-section {
+            margin-top: 1.5rem;
+        }
+
+        .artwork-section h4 {
+            color: var(--black);
+            margin: 0 0 0.8rem 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .artwork-section p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0 0 0.8rem 0;
+        }
+
+        .artwork-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 1200px) {
+            .artwork-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .artwork-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="artwork-detail-container">
+        <div class="artwork-header">
+            <h1>作品详情</h1>
+            <button class="back-button" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i>
+                返回
+            </button>
+        </div>
+
+        <div class="artwork-content">
+            <!-- 左侧列：互动装置 - 月逝无声 -->
+            <div class="category-column">
+                <div class="artwork-item">
+                    <div class="artwork-text">
+                        <h3>互动装置《月逝无声》</h3>
+                        <p>《月逝无声》是一件大型场域特定艺术装置，由《Selenite》和《Selena》两件重要作品组成，探索月球历史与当代观察，重新审视人类与月球的关系。</p>
+                        <div class="artwork-image-container">
+                            <img src="src/yue.png" alt="月逝无声" class="artwork-image">
+                        </div>
+                        <div class="artwork-details">
+                            <div class="detail-item">
+                                <div class="detail-label">艺术家</div>
+                                <div class="detail-value">许方华，香港多媒体艺术家</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">创作年份</div>
+                                <div class="detail-value">2021</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">位置</div>
+                                <div class="detail-value">2021 年 4 月 25 日至 5 月 23 日在香港大馆–古迹及艺术馆复式展厅展出</div>
+                            </div>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>设计细节与材料</h4>
+                            <p>材质：《Selenite》由机械手臂、屏幕、偏光镜等组成；《Selena》是编程手工制作的机器人，采用了再挪用的美术工具及画框、画架组件等，绘画使用墨水。</p>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>展示场景</h4>
+                            <p>在大馆多个展厅中展出，观众进入复式展厅中庭先看到《Selenite》，它为展厅提供主要光源，二楼有《Selena》及艺术家研究室，展示相关物件和月球绘画。</p>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>价值</h4>
+                            <p>使观者静思与月球的关系，引发对现代技术工具下人类了解自然方式的思考，探讨人造工具如何帮助发现可见与不可见的存在，将大馆空间转化为都市中的圣殿，激发人们探索未知的好奇和渴望。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 中间列：Placeholder -->
+            <div class="category-column">
+                 <div class="artwork-item">
+                    <div class="artwork-text">
+                        <h3>互动装置《Sonic Bloom（声音绽放）》</h3>
+                        <p>《Sonic Bloom（声音绽放）》是一个以 "城市共鸣" 为核心理念的互动声场装置，由彩色喇叭组成，通过三原色管状结构的拓扑排列，将声音转化为可视化的社交纽带。</p>
+                        <div class="artwork-image-container">
+                            <img src="src/yuri.png" alt="Sonic Bloom（声音绽放）" class="artwork-image">
+                        </div>
+                        <div class="artwork-details">
+                            <div class="detail-item">
+                                <div class="detail-label">艺术家</div>
+                                <div class="detail-value">Yuri Suzuki，日本声音艺术家。</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">创作年份</div>
+                                <div class="detail-value">2021</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">位置</div>
+                                <div class="detail-value">英国伦敦布朗哈特花园</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">尺寸</div>
+                                <div class="detail-value">无明确公开的具体尺寸信息，由多个喇叭组成花朵形态，规模以花园场地为基础进行布局。</div>
+                            </div>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>材质</h4>
+                            <p>主要包括彩色喇叭，可能为塑料或金属等材质，采用抗菌涂层处理，还有用于结构支撑的材料以及电子元件等用于声音的捕捉和传输。</p>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>展示场景</h4>
+                            <p>在伦敦布朗哈特花园中展示，处于城市公共空间，周围有行人、城市街道以及自然景观等，人们可以在花园中自由穿梭并与装置互动，聆听城市声音、与他人对话。</p>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>价值</h4>
+                            <p>该作品探索了公共空间的治愈力，旨在疫情后重建人与人的 "听觉亲密感"。它通过独特的设计，将人、自然和周围环境的声音融合，鼓励人们在平时不常互动的空间中交流，促进社区感的形成，同时其数字版还能在全球范围分享，具有艺术、社交和文化传播等多方面的价值。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧列：互动装置 - Pochva -->
+            <div class="category-column">
+                 <div class="artwork-item">
+                    <div class="artwork-text">
+                        <h3>互动装置《Pochva》</h3>
+                        <p>《Pochva》是一个融合了生物系统与数字技术的交互装置艺术作品，通过土壤中微生物产生的电信号实时塑造出重构的 "记忆景观"，探讨了记忆、自然与科技之间的关系。</p>
+                        <div class="artwork-image-container">
+                            <img src="src/fi.png" alt="Pochva" class="artwork-image">
+                        </div>
+                        <div class="artwork-details">
+                            <div class="detail-item">
+                                <div class="detail-label">艺术家</div>
+                                <div class="detail-value">Filipp Groubnov，跨学科艺术家。</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">创作年份</div>
+                                <div class="detail-value">2023</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">位置</div>
+                                <div class="detail-value">荷兰阿姆斯特丹的 Josilda Da Conceicao 画廊</div>
+                            </div>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>材质</h4>
+                            <p>包括从白俄罗斯 Zhirov Ichi 村收集的土壤、LED 屏幕、电脑、金属等。</p>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>展示场景</h4>
+                            <p>在画廊的展览空间中，观众可以看到从艺术家祖父母所在村庄带来的土壤，以及与土壤传感器相连的显示屏，显示屏上呈现着由土壤中微生物电信号实时影响的数字景观。</p>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>价值</h4>
+                            <p>作品具有多重价值。在艺术层面，它将科学与艺术融合，以独特的方式呈现了记忆与现实、自然与科技的交织；在情感层面，承载了艺术家对故乡的思念和记忆，引发观众对于故乡、记忆和身份的情感共鸣；在文化层面，通过对特定地域文化和自然景观的呈现，促进了不同文化背景观众之间的交流和理解。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

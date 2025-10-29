@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品详情 - 公共艺术设计</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --beige: #f5f0e8;
+            --white: #ffffff;
+            --gray: #888888;
+            --black: #222222;
+            --light-brown: #d2c5a8;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 14px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--beige);
+            color: var(--black);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .artwork-detail-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .artwork-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+        }
+
+        .artwork-header h1 {
+            color: var(--black);
+            font-weight: 500;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .back-button {
+            background: none;
+            border: 1px solid var(--light-brown);
+            padding: 8px 16px;
+            border-radius: var(--radius);
+            color: var(--black);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .back-button:hover {
+            background: var(--light-brown);
+            color: var(--white);
+        }
+
+        .artwork-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .category-column {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .artwork-item {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: visible;
+            transition: var(--transition);
+        }
+
+        .artwork-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .artwork-text {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .artwork-text h3 {
+            margin: 0 0 1rem 0;
+            color: var(--black);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .artwork-text p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0 0 1rem 0;
+        }
+
+        .artwork-details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light-brown);
+        }
+
+        .detail-item {
+            margin-bottom: 0.8rem;
+        }
+
+        .detail-label {
+            color: var(--black);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .detail-value {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .artwork-section {
+            margin-top: 1.5rem;
+        }
+
+        .artwork-section h4 {
+            color: var(--black);
+            margin: 0 0 0.8rem 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .artwork-section p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0 0 0.8rem 0;
+        }
+
+        .artwork-image-container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .artwork-image {
+            width: 100%;
+            height: 295px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 1200px) {
+            .artwork-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .artwork-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="artwork-detail-container">
+        <div class="artwork-header">
+            <h1>作品展示</h1>
+            <button class="back-button" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i>
+                返回
+            </button>
+        </div>
+
+        <div class="artwork-content">
+            <!-- 左侧列：墙面艺术 - 笔记本墙 -->
+            <div class="category-column">
+                 <div class="artwork-item">
+                    <div class="artwork-text">
+                        <h3>墙面艺术《笔记本墙》</h3>
+                        <p>该作品是一个大型的互动式灯光艺术装置，由众多笔记本组合成巨大的白色纸墙，旨在通过公众的参与和互动，探讨记忆、表达与公共空间的关系。</p>
+                        <div class="artwork-image-container">
+                            <img src="src/page.png" alt="笔记本墙" class="artwork-image">
+                        </div>
+                        <div class="artwork-details">
+                            <div class="detail-item">
+                                <div class="detail-label">艺术家</div>
+                                <div class="detail-value">西班牙艺术团体 Luzinterruptus</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">创作年份</div>
+                                <div class="detail-value">2022</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">位置</div>
+                                <div class="detail-value">西班牙马德里中心市长广场。</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">尺寸</div>
+                                <div class="detail-value">约 30 米长、10 米高。</div>
+                            </div>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>材质</h4>
+                            <p>主要材质为纸，具体是 4000 多本笔记本，此外还有用于固定笔记本的装置以及灯光设备。</p>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>展示场景</h4>
+                            <p>在马德里市长广场展出，周围是巴洛克式建筑。装置以其简洁的白色外观与周围的建筑形成鲜明对比，在夜晚灯光亮起时，营造出一种宁静而又充满诗意的氛围。公众可以自由地在笔记本页面上书写、绘画，表达自己的想法和情感。</p>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>价值</h4>
+                            <p>在艺术层面，它以独特的形式将文学、绘画、灯光艺术和建筑空间相融合，创造出富有感染力的艺术氛围；在社会层面，为公众提供了一个自由表达的平台，促进了不同年龄、背景的人之间的交流和情感分享，尤其是通过让老年人提前参与书写，记录下他们在疫情封锁期间的经历和感受，使作品成为了一个集体记忆的载体，具有重要的社会文化价值。同时，作为马德里国际灯光节的一部分，也为城市增添了文化活力和艺术气息。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 中间列：墙面艺术 - 迷迭香 -->
+            <div class="category-column">
+                <div class="artwork-item">
+                    <div class="artwork-text">
+                        <h3>墙面艺术《迷迭香》</h3>
+                        <p>《迷迭香》是一幅大型壁画作品，属于 Mona Caron "weeds" 项目的一部分，通过放大描绘城市中常见却被忽视的迷迭香，展现植物在城市环境中的顽强生命力。</p>
+                        <div class="artwork-image-container">
+                            <img src="src/mi.png" alt="迷迭香" class="artwork-image">
+                        </div>
+                        <div class="artwork-details">
+                            <div class="detail-item">
+                                <div class="detail-label">艺术家</div>
+                                <div class="detail-value">Mona Caron，一位专注于公共空间壁画创作的艺术家，擅长以植物为主题进行大型墙绘创作。</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">创作年份</div>
+                                <div class="detail-value">2021</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">位置</div>
+                                <div class="detail-value">美国旧金山市场街沿圣何塞 McEnery 会议中心。</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">尺寸</div>
+                                <div class="detail-value">占地 3300 平方英尺。</div>
+                            </div>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>材质</h4>
+                            <p>通常使用喷漆等材料进行创作，在粗糙的墙面上通过色彩和线条来塑造迷迭香的形态。</p>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>展示场景</h4>
+                            <p>位于城市中心的会议中心附近，周围是繁华的街道、过往的行人和车辆，以及其他城市建筑。壁画在这样的环境中十分显眼，与周围的城市景观形成鲜明对比，吸引着人们的目光。</p>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>价值</h4>
+                            <p>艺术价值上，以独特的视角和表现手法，将常见的植物以大型壁画的形式呈现，给人以强烈的视觉冲击，展现了艺术与自然的融合；社会价值方面，提醒人们关注城市中那些被忽视的生命，引发人们对自然与城市关系的思考，同时也为城市空间增添了文化艺术氛围，提升了城市的文化品位。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧列：墙面艺术 - 吻墙 -->
+            <div class="category-column">
+                <div class="artwork-item">
+                    <div class="artwork-text">
+                        <h3>墙面艺术《吻墙》</h3>
+                        <p>《吻墙》是一幅具有深厚文化内涵和独特艺术形式的大型 photomosaic（照片马赛克）作品，由众多市民提供的照片拼接成一个巨大的吻的形象，每张照片都承载着个体对于自由、爱与幸福的理解和记忆。</p>
+                        <div class="artwork-image-container">
+                            <img src="src/wen.png" alt="吻墙" class="artwork-image">
+                        </div>
+                        <div class="artwork-details">
+                            <div class="detail-item">
+                                <div class="detail-label">艺术家</div>
+                                <div class="detail-value">Joan Fontcuberta，西班牙加泰罗尼亚地区的著名摄影师。</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">创作年份</div>
+                                <div class="detail-value">2014</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">位置</div>
+                                <div class="detail-value">西班牙巴塞罗那哥特区（Gòtic）的伊西德罗・诺内尔广场（Plaza de Isidre Nonell）。</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">尺寸</div>
+                                <div class="detail-value">长 8 米，高近 4 米。</div>
+                            </div>
+                        </div>
+                        <div class="artwork-section">
+                            <h4>材质</h4>
+                            <p>4000 块印有小幅面照片的瓷砖，通过光瓷技术处理，具有较强的耐候性。</p>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>展示场景</h4>
+                            <p>位于巴塞罗那的老城区，周围是充满历史韵味的古老建筑和狭窄街道。这面墙在广场上十分醒目，无论是白天还是夜晚，都吸引着众多游客和当地居民的目光。在不同的光线下，它呈现出不同的视觉效果，如晨光下温柔诗意，黄昏时爱意深沉。</p>
+                        </div>
+                         <div class="artwork-section">
+                            <h4>价值</h4>
+                            <p>《吻墙》具有多方面的价值。在艺术层面，它将摄影、陶瓷工艺与公共艺术完美结合，以独特的马赛克形式呈现出震撼的视觉效果；在文化层面，它是巴塞罗那历史与文化的象征，既纪念了西班牙民主恢复 300 周年，也承载了市民对于自由、爱与幸福的集体记忆。此外，这件作品还促进了公众参与艺术创作，增强了市民对城市的认同感和归属感，成为巴塞罗那城市文化景观的重要组成部分，吸引着世界各地的游客前来观赏和打卡，提升了城市的文化影响力和知名度。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 从URL获取作品ID
+        const urlParams = new URLSearchParams(window.location.search);
+        const artworkId = urlParams.get('id');
+
+
+        function loadArtworkDetails(id) {
+            const artwork = artworks[id];
+            if (artwork) {
+                document.querySelector('.artwork-image').src = artwork.image;
+                document.querySelector('.artwork-image').alt = artwork.title;
+                document.querySelector('.artwork-text h3').textContent = artwork.title;
+                document.querySelector('.artwork-text p').textContent = artwork.description;
+
+                const details = document.querySelector('.artwork-details');
+                details.innerHTML = `
+                    <div class="detail-item">
+                        <span class="detail-label">艺术家：</span>
+                        <span class="detail-value">${artwork.artist}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">创作年份：</span>
+                        <span class="detail-value">${artwork.year}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">位置：</span>
+                        <span class="detail-value">${artwork.location}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">材料：</span>
+                        <span class="detail-value">${artwork.materials}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">尺寸：</span>
+                        <span class="detail-value">${artwork.dimensions}</span>
+                    </div>
+                `;
+
+                // 渲染 extra 字段
+                if (artwork.extra) {
+                    details.insertAdjacentHTML('afterend', artwork.extra);
+                }
+            }
+        }
+
+        // 页面加载时加载作品详情
+        if (artworkId) {
+            loadArtworkDetails(artworkId);
+        }
+    </script>
+</body>
+</html> 
+
+
+
+
+
