@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品详情 - 公共艺术设计</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --beige: #f5f0e8;
+            --white: #ffffff;
+            --gray: #888888;
+            --black: #222222;
+            --light-brown: #d2c5a8;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 14px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--beige);
+            color: var(--black);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .artwork-detail-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .artwork-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+        }
+
+        .artwork-header h1 {
+            color: var(--black);
+            font-weight: 500;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .back-button {
+            background: none;
+            border: 1px solid var(--light-brown);
+            padding: 8px 16px;
+            border-radius: var(--radius);
+            color: var(--black);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .back-button:hover {
+            background: var(--light-brown);
+            color: var(--white);
+        }
+
+        .artwork-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .category-column {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .artwork-item {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .artwork-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .artwork-text {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .artwork-text h3 {
+            margin: 0 0 1rem 0;
+            color: var(--black);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .artwork-text p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0 0 1rem 0;
+        }
+
+        .artwork-details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light-brown);
+        }
+
+        .detail-item {
+            margin-bottom: 0.8rem;
+        }
+
+        .detail-label {
+            color: var(--black);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .detail-value {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .artwork-section {
+            margin-top: 1.5rem;
+        }
+
+        .artwork-section h4 {
+            color: var(--black);
+            margin: 0 0 0.8rem 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .artwork-section p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0 0 0.8rem 0;
+        }
+
+        .artwork-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 1200px) {
+            .artwork-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .artwork-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="artwork-detail-container">
+        <div class="artwork-header">
+            <h1>作品详情</h1>
+            <button class="back-button" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i>
+                返回
+            </button>
+        </div>
+
+        <div class="artwork-content">
+            <!-- 左侧列：城市雕塑 -->
+            <div class="category-column">
+                <div class="artwork-item">
+                    <div class="artwork-text">
+                        <h3>天外之物</h3>
+                        <p>作品《天外之物》选择了从天而降的雨滴造型，造型抽象、安静、纯粹，从自然的形态中抽离出来，同时与艺术家的重要作品《迹象》及个人艺术语言相关。单纯抽象的雨滴形态，会让人感受到自然与生活及艺术的密切关联，人们在当今快速工作生活之余，体会艺术带来的轻松、愉悦的感觉。</p>
+                        
+                        <img src="src/sky.png" alt="天外之物" class="artwork-image">
+                        
+                        <div class="artwork-details">
+                            <div class="detail-item">
+                                <div class="detail-label">艺术家</div>
+                                <div class="detail-value">刘建华</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">创作年份</div>
+                                <div class="detail-value">2019</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">位置</div>
+                                <div class="detail-value">杨浦滨江渔人码头</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">分类</div>
+                                <div class="detail-value">雕塑类艺术品</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">尺寸</div>
+                                <div class="detail-value">高2000cm</div>
+                            </div>
+                        </div>
+
+                        <div class="artwork-section">
+                            <h4>设计细节与材料</h4>
+                            <p>材质：不锈钢、夜光漆、镭射灯，作品的颜色采用荧光材料。</p>
+                            <p>展示场景：通过光能的作用，使人们在晚上也能看到该艺术作品的形态，在造型顶端置放一个激光灯，晚上激光灯直射天空，长长的激光射线让人感受到雨滴造型似从天而降。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 中间列：墙面艺术 -->
+            <div class="category-column">
+                <div class="artwork-item">
+                    <div class="artwork-text">
+                        <h3>天算</h3>
+                        <p>余晨星的《天算》是一件高 9 米的不锈钢雕塑作品，以不断向天空延伸并缩小的算盘为造型，像梯子或台阶。该作品获得第七届 "刘开渠奖" 国际雕塑大展金奖，创作历时半年，传递出 "天问" 的意象，给观众留下想象空间。</p>
+                        
+                        <img src="src/yu.png" alt="天算" class="artwork-image">
+                        
+                        <div class="artwork-details">
+                            <div class="detail-item">
+                                <div class="detail-label">艺术家</div>
+                                <div class="detail-value">余晨星</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">创作年份</div>
+                                <div class="detail-value">2018</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">位置</div>
+                                <div class="detail-value">芜湖</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">尺寸</div>
+                                <div class="detail-value">9米</div>
+                            </div>
+                        </div>
+
+                        <div class="artwork-section">
+                            <h4>设计细节与材料</h4>
+                            <p>材质：金属</p>
+                            <p>展示场景：向上延伸并逐渐缩小的算盘造型仿佛一架梯子，也像通往空中的一道台阶直插云霄。</p>
+                            <p>意象：指向天空的造型传递出"天问"的意象，他希望作品带给观众想象的空间，能够在互动中产生不同的解读。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧列：互动装置 -->
+            <div class="category-column">
+                <div class="artwork-item">
+                    <div class="artwork-text">
+                        <h3>地平线</h3>
+                        <p>尼尔·道森的《地平线》是一件大型户外雕塑作品，以不锈钢管构成镂空立方体框架，通过光影变化呈现虚实交织的视觉效果，兼具空间穿透性与几何美感。该作品常设于城市公共空间，如新西兰基督城机场等地，成为连接环境与观者的标志性景观。</p>
+                        
+                        <img src="src/di.png" alt="地平线" class="artwork-image">
+                        
+                        <div class="artwork-details">
+                            <div class="detail-item">
+                                <div class="detail-label">艺术家</div>
+                                <div class="detail-value">尼尔·道森</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">创作年份</div>
+                                <div class="detail-value">2014</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">位置</div>
+                                <div class="detail-value">新西兰吉布斯农场的最高点上</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">尺寸</div>
+                                <div class="detail-value">高达15米</div>
+                            </div>
+                        </div>
+
+                        <div class="artwork-section">
+                            <h4>设计细节与材料</h4>
+                            <p>材质：不锈钢材质</p>
+                            <p>展示场景：是一件从公路上可以直接看到的艺术品。平坦开阔的山坡上，飘落了一片被风吹起的超大型"纸张"，钢制的简单线条在三维环境中营造出一种二维的错觉，仿佛突破了次元壁。雕塑中间的透明镂空部分令环境成为了它的画布，将艺术和生态进行了完美结合，从不同角度、不同时间观看都能获得焕然一新的体验。感觉"那张纸"下一秒就要被风吹走。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 从URL获取作品ID
+        const urlParams = new URLSearchParams(window.location.search);
+        const artworkId = urlParams.get('id');
+
+        // 作品数据
+        const artworks = {
+            '1': {
+                title: "城市雕塑",
+                description: "这是一件融合了现代艺术与城市文化的公共雕塑作品。作品通过独特的造型和材质，展现了城市发展的活力与人文关怀。",
+                image: "src/1.JPG",
+                artist: "张明",
+                year: "2023",
+                location: "城市中心广场",
+                materials: "不锈钢、玻璃",
+                dimensions: "高 5.5米"
+            },
+            '2': {
+                title: "墙面艺术",
+                description: "这是一件融合了现代艺术与城市文化的墙面艺术作品。通过独特的色彩和构图，展现了城市空间的视觉张力。",
+                image: "src/2.JPG",
+                artist: "李华",
+                year: "2023",
+                location: "城市艺术中心",
+                materials: "丙烯颜料、金属",
+                dimensions: "宽 8米"
+            },
+            '3': {
+                title: "互动装置《Moon Rabbit》",
+                description: '《Moon Rabbit》是荷兰艺术家霍夫曼为2014年台湾桃园地景艺术节创作的大型装置艺术作品，灵感源自中国神话"嫦娥与玉兔"的传说。作品以一只长25.3米（83英尺）、通体白色的巨型兔子为核心，慵懒地躺卧于桃园海军基地的军事碉堡上，仰面朝天，仿佛在凝望月亮并思考无限可能。',
+                image: "moonrabbit.jpg",
+                artist: "霍夫曼（Florentijn Hofman）",
+                year: "2014",
+                location: "台湾桃园海军基地",
+                materials: "外部：12000+张防水纸，内部：木材、聚苯乙烯",
+                dimensions: "长25.3米",
+
+            '4': {
+                title: "建筑艺术",
+                description: "融合功能与美学的公共空间。建筑艺术作品强调空间与环境的互动，体现城市发展与人文关怀的结合。",
+                image: "src/4.JPG",
+                artist: "王伟",
+                year: "2022",
+                location: "新城区文化广场",
+                materials: "混凝土、玻璃、钢材",
+                dimensions: "高 12米"
+            },
+            '5': {
+                title: "公共设施",
+                description: "融入艺术的日常公共服务装置。通过艺术化设计提升公共设施的美观性与实用性，丰富市民生活体验。",
+                image: "src/5.PNG",
+                artist: "赵敏",
+                year: "2021",
+                location: "市民公园",
+                materials: "不锈钢、木材",
+                dimensions: "长 3米"
+            }
+        };
+
+        function loadArtworkDetails(id) {
+            const artwork = artworks[id];
+            if (artwork) {
+                document.querySelector('.artwork-image').src = artwork.image;
+                document.querySelector('.artwork-image').alt = artwork.title;
+                document.querySelector('.artwork-text h3').textContent = artwork.title;
+                document.querySelector('.artwork-text p').textContent = artwork.description;
+
+                const details = document.querySelector('.artwork-details');
+                details.innerHTML = `
+                    <div class="detail-item">
+                        <span class="detail-label">艺术家：</span>
+                        <span class="detail-value">${artwork.artist}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">创作年份：</span>
+                        <span class="detail-value">${artwork.year}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">位置：</span>
+                        <span class="detail-value">${artwork.location}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">材料：</span>
+                        <span class="detail-value">${artwork.materials}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">尺寸：</span>
+                        <span class="detail-value">${artwork.dimensions}</span>
+                    </div>
+                `;
+
+                // 渲染 extra 字段
+                if (artwork.extra) {
+                    details.insertAdjacentHTML('afterend', artwork.extra);
+                }
+            }
+        }
+
+        // 页面加载时加载作品详情
+        if (artworkId) {
+            loadArtworkDetails(artworkId);
+        }
+    </script>
+</body>
+</html> 
